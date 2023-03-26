@@ -1,9 +1,7 @@
 package com.ssafy.tlens.entity.rdbms;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -24,7 +22,9 @@ public class User {
     @Column(name = "email", nullable = false, length = 40)
     private String email;
 
-    @Column(name = "password", nullable = false, length = 40)
+    @Column(name = "password", nullable = false, length = 100)
+    @JsonIgnore
+    @ToString.Exclude
     private String password;
 
     @Column(name = "nickname", nullable = false, length = 15)

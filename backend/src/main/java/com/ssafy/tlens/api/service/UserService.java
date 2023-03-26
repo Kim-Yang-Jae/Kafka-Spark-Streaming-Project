@@ -1,6 +1,8 @@
 package com.ssafy.tlens.api.service;
 
-public interface UserService {
+import com.ssafy.tlens.dto.SignUpRequestDto;
 
+public interface UserService {
+    void signUp(SignUpRequestDto member) throws Exception;
 
 }
