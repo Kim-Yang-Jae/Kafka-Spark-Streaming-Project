@@ -7,6 +7,7 @@ import com.ssafy.tlens.config.jwt.JwtProvider;
 import com.ssafy.tlens.dto.SignUpRequestDto;
 import com.ssafy.tlens.enums.ResponseEnum;
 import com.ssafy.tlens.api.service.UserServiceImpl;
+import com.ssafy.tlens.handler.exception.CustomApiException;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -41,19 +42,22 @@ public class UserController {
     public ResponseEntity<?> reissue(
             @AuthenticationPrincipal PrincipalDetails principalDetails, HttpServletRequest request
     ) {
-        System.out.println(principalDetails.getUser().getUserId() + " " + principalDetails.getUser().getEmail());
-        String reqRTK = request.getHeader(JwtProperties.HEADER_STRING)
-                .replace(JwtProperties.TOKEN_PREFIX, "");
-
-        String atk= JwtProperties.TOKEN_PREFIX+jwtProvider.reissueAtk(principalDetails.getUser(), reqRTK);
-        return new ResponseEntity<>(new ResponseDto<>(ResponseEnum.ATK_REISSUE_SUCCESS, atk), HttpStatus.OK);
+        System.out.println("reissue controller 진입: " + principalDetails.getUser().getUserId() + " " + principalDetails.getUser().getEmail());
+        try {
+            String reqRTK = request.getHeader(JwtProperties.HEADER_STRING)
+                    .replace(JwtProperties.TOKEN_PREFIX, "");
+            String atk= JwtProperties.TOKEN_PREFIX+jwtProvider.reissueAtk(principalDetails.getUser(), reqRTK);
+            return new ResponseEntity<>(new ResponseDto<>(ResponseEnum.ATK_REISSUE_SUCCESS, atk), HttpStatus.OK);
+        }catch (Exception e){
+            // /users/reissue는 permitAll 설정을 해놓고 refresh토큰의 유효성 검증에 대한 에러처리는 여기서 한다.
+            //만료된 refresh 토큰
+            throw new CustomApiException(ResponseEnum.AUTH_REFRESH_EXPIRED);
+        }
     }
     // 로그아웃
     @GetMapping("/logout")
     public ResponseEntity<?> logout(@AuthenticationPrincipal PrincipalDetails principalDetails, HttpServletRequest request) {
         System.out.println("logout 진입");
-        System.out.println(request);
-        System.out.println(request.getHeader(JwtProperties.HEADER_STRING));
         String reqATK = request.getHeader(JwtProperties.HEADER_STRING)
                 .replace(JwtProperties.TOKEN_PREFIX, "");
         userService.logout(principalDetails.getUser().getEmail(), reqATK);

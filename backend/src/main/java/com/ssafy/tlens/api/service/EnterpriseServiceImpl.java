@@ -20,8 +20,8 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class EnterpriseServiceImpl implements EnterpriseService {
 
-    private EnterpriseTrendRepository enterpriseTrendRepository;
-    private EnterpriseRepository enterpriseRepository;
+    private final EnterpriseTrendRepository enterpriseTrendRepository;
+    private final EnterpriseRepository enterpriseRepository;
 
     public void insertToEnterprise(TrendRequestDTO request) {
 

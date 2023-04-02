@@ -58,7 +58,7 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter{
             return;
         }
 
-            // 토큰 검증 (이게 인증이기 때문에 AuthenticationManager도 필요 없음)
+        // 토큰 검증 (이게 인증이기 때문에 AuthenticationManager도 필요 없음)
         // 내가 SecurityContext에 직접 접근해서 세션을 만들때 자동으로 UserDetailsService에 있는 loadByUsername이 호출됨.
 
         String userEmail = jwtProvider.getUserEmail(token);
@@ -66,34 +66,12 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter{
         String type = jwtProvider.getType(token);
         String requestURI = request.getRequestURI();
 
-        if (type.equals("RTK") && !requestURI.equals("/users/reissue")) {
+        if (type.equals("RTK") && !requestURI.equals("/api/v1/users/reissue")) {
             System.out.println("RTK 타입일 땐 /reissue 요청만 받을 수 있다.");
             chain.doFilter(request, response);
             return;
         }
 
-
-
-
-//        String userEmail = null;
-//
-//        userEmail = loginRequestDto.getEmail();
-
-//        if(loginRequestDto.getLoginType().equals(LoginType.LOGIN)){
-//            // 로그인
-////            KakaoUserInfoDto kakaoUserInfoDto = kakaoProvider.login(loginRequestDto.getToken());
-////            if(kakaoUserInfoDto == null){
-////                throw new CustomAuthenticationException(ResponseEnum.AUTH_INVALID_TOKEN);
-////            }
-//            userEmail = loginRequestDto.getEmail();
-//        }else{
-//            // refresh
-//            String refreshToken = redisTemplate.opsForValue().getAndDelete(loginRequestDto.getToken());
-//            if(refreshToken == null){
-//                throw new CustomAuthenticationException(ResponseEnum.AUTH_REFRESH_DOES_NOT_EXIST);
-//            }
-//            userEmail = jwtProvider.getUserEmail(refreshToken);
-//        }
 
         if(userEmail != null) {
             Optional<User> user = userRepository.findByEmail(userEmail);

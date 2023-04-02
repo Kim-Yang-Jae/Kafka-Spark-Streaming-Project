@@ -18,8 +18,8 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class CategoryServiceImpl implements CategoryService{
 
-    private CategoryTrendRepository categoryTrendRepository;
-    private CategoryRepository categoryRepository;
+    private  final CategoryTrendRepository categoryTrendRepository;
+    private  final CategoryRepository categoryRepository;
 
     public void insertToCategory(TrendRequestDTO request) {
 

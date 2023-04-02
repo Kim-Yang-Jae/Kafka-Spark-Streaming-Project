@@ -21,12 +21,8 @@ public class JwtProvider {
     private final RedisDao redisDao;
 
     public String getUserEmail(String jwt) {
-        try {
-            return JWT.require(Algorithm.HMAC512(JwtProperties.SECRET)).build().verify(jwt)
-                    .getClaim("email").asString();
-        }catch (Exception e){
-            throw new CustomAuthenticationException(ResponseEnum.AUTH_REFRESH_EXPIRED);
-        }
+        return JWT.require(Algorithm.HMAC512(JwtProperties.SECRET)).build().verify(jwt)
+                .getClaim("email").asString();
     }
 
     public String getType(String jwt) {

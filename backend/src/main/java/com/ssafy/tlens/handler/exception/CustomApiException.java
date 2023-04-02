@@ -2,7 +2,9 @@ package com.ssafy.tlens.handler.exception;
 
 
 import com.ssafy.tlens.enums.ResponseEnum;
+import lombok.Getter;
 
+@Getter
 public class CustomApiException extends RuntimeException{
 
     private final ResponseEnum responseEnum;

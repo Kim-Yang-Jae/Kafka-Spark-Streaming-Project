@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class RegionServiceImpl implements RegionService {
 
-    private RegionTrendRepository regionTrendRepository;
-    private RegionRepository regionRepository;
+    private final RegionTrendRepository regionTrendRepository;
+    private final RegionRepository regionRepository;
 
     public void insertToRegion(TrendRequestDTO request) {
 

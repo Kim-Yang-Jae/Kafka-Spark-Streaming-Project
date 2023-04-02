@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping("/mypage")
 public class MypageController {
 
-    private MypageService mypageService;
+    private final MypageService mypageService;
 
     @GetMapping("/userinfo")
     public ResponseEntity<?> getUserInfo(@RequestParam Long id) {
