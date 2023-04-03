@@ -89,17 +89,18 @@ public class SubscribeServiceImpl implements SubscribeService {
     }
 
     @Override
-    public boolean isSubscribe(Long userId, Long reporterId) {
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> new NotFoundException("Could not found user id : " + userId));
+    public boolean subscribeStatus(SubscribeRequestDTO subscribeRequestDTO) {
 
-        Reporter reporter = reporterRepository.findById(reporterId)
-                .orElseThrow(() -> new NotFoundException("Could not found news id : " + reporterId));
+        User user = userRepository.findById(subscribeRequestDTO.getUserId())
+                .orElseThrow(() -> new NotFoundException("Could not found user id : " + subscribeRequestDTO.getUserId()));
+
+        Reporter reporter = reporterRepository.findById(subscribeRequestDTO.getReporterId())
+                .orElseThrow(() -> new NotFoundException("Could not found reporter id : " + subscribeRequestDTO.getReporterId()));
 
         if (subscribeRepository.findByUserAndReporter(user, reporter).isPresent()) {
             return true;
-        } else {
-            return false;
         }
+
+        return false;
     }
 }

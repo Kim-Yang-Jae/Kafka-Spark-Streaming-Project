@@ -8,5 +8,5 @@ public interface ScrapService {
     void insert(ScrapRequestDTO scrapRequestDTO);
     void delete(ScrapRequestDTO scrapRequestDTO);
     ListAndCntResponseDTO getScrapNewsList(Long userId);
-    boolean isScrap(Long userId, Long newsId);
+    boolean scrapStatus(ScrapRequestDTO scrapRequestDTO);
 }

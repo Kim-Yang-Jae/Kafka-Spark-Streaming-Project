@@ -21,6 +21,7 @@ public class ScrapServiceImpl implements ScrapService {
     private final UserRepository userRepository;
     private final NewsRepository newsrepository;
     private final ScrapRepository scrapRepository;
+
     @Override
     @Transactional
     public void insert(ScrapRequestDTO scrapRequestDTO) {
@@ -43,7 +44,9 @@ public class ScrapServiceImpl implements ScrapService {
                 .build();
 
         scrapRepository.save(scrap);
-    };
+    }
+
+    ;
 
     @Override
     @Transactional
@@ -58,10 +61,12 @@ public class ScrapServiceImpl implements ScrapService {
                 .orElseThrow(() -> new NotFoundException("Could not found scrap id"));
 
         scrapRepository.delete(scrap);
-    };
+    }
+
+    ;
 
     @Override
-    public ListAndCntResponseDTO getScrapNewsList(Long userId){
+    public ListAndCntResponseDTO getScrapNewsList(Long userId) {
         List<News> newsList = newsrepository.findScrapNewsByUserId(userId);
 
         List<NewsInfoDTO> newsInfoList = newsList.stream()
@@ -72,17 +77,17 @@ public class ScrapServiceImpl implements ScrapService {
     }
 
     @Override
-    public boolean isScrap(Long userId, Long newsId) {
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> new NotFoundException("Could not found user id : " + userId));
+    public boolean scrapStatus(ScrapRequestDTO scrapRequestDTO) {
+        User user = userRepository.findById(scrapRequestDTO.getUserId())
+                .orElseThrow(() -> new NotFoundException("Could not found user id : " + scrapRequestDTO.getUserId()));
 
-        News news = newsrepository.findById(newsId)
-                .orElseThrow(() -> new NotFoundException("Could not found news id : " + newsId));
+        News news = newsrepository.findById(scrapRequestDTO.getNewsId())
+                .orElseThrow(() -> new NotFoundException("Could not found news id : " + scrapRequestDTO.getNewsId()));
 
         if (scrapRepository.findByUserAndNews(user, news).isPresent()) {
             return true;
-        } else {
-            return false;
         }
+
+        return false;
     }
 }

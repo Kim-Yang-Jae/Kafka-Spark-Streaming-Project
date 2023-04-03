@@ -4,11 +4,14 @@ package com.ssafy.tlens.api.service;
 import com.ssafy.tlens.api.request.ReporterRequestDTO;
 import com.ssafy.tlens.api.request.TrendRequestDTO;
 import com.ssafy.tlens.api.response.MainPressDTO;
+import com.ssafy.tlens.api.response.NewsInfoDTO;
 import com.ssafy.tlens.api.response.ReporterInfoDTO;
 import com.ssafy.tlens.common.exception.handler.NotFoundException;
+import com.ssafy.tlens.entity.rdbms.News;
 import com.ssafy.tlens.entity.rdbms.Press;
 import com.ssafy.tlens.entity.rdbms.Reporter;
 import com.ssafy.tlens.entity.rdbms.ReporterTrend;
+import com.ssafy.tlens.repository.NewsSearchRepository;
 import com.ssafy.tlens.repository.PressRepository;
 import com.ssafy.tlens.repository.ReporterRepository;
 import com.ssafy.tlens.repository.ReporterTrendRepository;
@@ -25,6 +28,7 @@ public class ReporterServiceImpl implements ReporterService {
     private final ReporterTrendRepository reporterTrendRepository;
     private final ReporterRepository reporterRepository;
     private final PressRepository pressRepository;
+    private final NewsSearchRepository newsSearchRepository;
 
     public void insertToReporter(TrendRequestDTO request) {
 
@@ -69,6 +73,14 @@ public class ReporterServiceImpl implements ReporterService {
                 .collect(Collectors.toList());
 
         return reporterInfoList;
+    }
+
+    public List<NewsInfoDTO> getNewsByCategory(String reporter, int pageNo, int pageSize) {
+        List<News> newses = newsSearchRepository.findByCategory(reporter, pageNo, pageSize);
+
+        return newses.stream()
+                .map(news -> new NewsInfoDTO(news))
+                .collect(Collectors.toList());
     }
 
     @Override

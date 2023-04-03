@@ -50,6 +50,22 @@ public class NewsSearchRepository {
                 .fetch();
     }
 
+    public List<News> findByReporter(String reporter, int pageNo, int pageSize) {
+        JPAQueryFactory query = new JPAQueryFactory(em);
+        QNews news = QNews.news;
+
+        return query
+                .select(news)
+                .from(news)
+                .where(reporterEq(reporter))
+                .orderBy(news.createdDate.desc())
+                //offset 방식
+                .limit(pageSize)
+                .offset(pageNo * pageSize)
+                .distinct()
+                .fetch();
+    }
+
     // 분야별 기사 수
     public Long countNewsByCategory(String category) {
         JPAQueryFactory query = new JPAQueryFactory(em);
@@ -80,6 +96,11 @@ public class NewsSearchRepository {
             return null;
         }
         return QNews.news.category.eq(category);
+    }
+
+    // 기자 일치 조건
+    private BooleanExpression reporterEq(String reporter) {
+        return QNews.news.reporter.eq(reporter);
     }
 
     // 현재 시각 기준 하루 이내 조건

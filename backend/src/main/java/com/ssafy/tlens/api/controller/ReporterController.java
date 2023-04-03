@@ -1,6 +1,7 @@
 package com.ssafy.tlens.api.controller;
 
 import com.ssafy.tlens.api.request.TrendRequestDTO;
+import com.ssafy.tlens.api.response.NewsInfoDTO;
 import com.ssafy.tlens.api.response.ReporterInfoDTO;
 import com.ssafy.tlens.api.service.ReporterService;
 import com.ssafy.tlens.common.ResponseDto;
@@ -40,6 +41,13 @@ public class ReporterController {
     @GetMapping("/press")
     public ResponseEntity<?> getReportersByPress(@RequestParam Long pressId) {
         List<ReporterInfoDTO> result = reporterService.getReportersByPress(pressId);
+
+        return new ResponseEntity<>(new ResponseDto<>(ResponseEnum.PRODUCT_CATEGORY_SUCCESS, result), HttpStatus.OK);
+    }
+
+    @GetMapping("/news")
+    public ResponseEntity<?> getNewsByReporter(@RequestParam String reporter, @RequestParam int pageNo, @RequestParam int pageSize) {
+        List<NewsInfoDTO> result = reporterService.getNewsByCategory(reporter, pageNo, pageSize);
 
         return new ResponseEntity<>(new ResponseDto<>(ResponseEnum.PRODUCT_CATEGORY_SUCCESS, result), HttpStatus.OK);
     }
