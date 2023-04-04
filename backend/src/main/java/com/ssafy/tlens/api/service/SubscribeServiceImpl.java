@@ -57,7 +57,7 @@ public class SubscribeServiceImpl implements SubscribeService {
         User user = userRepository.findById(subscribeRequestDTO.getUserId())
                 .orElseThrow(() -> new NotFoundException("Could not found user id : " + subscribeRequestDTO.getUserId()));
 
-        Reporter reporter = reporterRepository.findById(subscribeRequestDTO.getUserId())
+        Reporter reporter = reporterRepository.findById(subscribeRequestDTO.getReporterId())
                 .orElseThrow(() -> new NotFoundException("Could not found reporter id : " + subscribeRequestDTO.getReporterId()));
 
         Subscribe subscribe = subscribeRepository.findByUserAndReporter(user, reporter)
