@@ -75,8 +75,8 @@ public class ReporterServiceImpl implements ReporterService {
         return reporterInfoList;
     }
 
-    public List<NewsInfoDTO> getNewsByCategory(String reporter, int pageNo, int pageSize) {
-        List<News> newses = newsSearchRepository.findByCategory(reporter, pageNo, pageSize);
+    public List<NewsInfoDTO> getNewsByReporter(String reporter, int pageNo, int pageSize) {
+        List<News> newses = newsSearchRepository.findByReporter(reporter, pageNo, pageSize);
 
         return newses.stream()
                 .map(news -> new NewsInfoDTO(news))

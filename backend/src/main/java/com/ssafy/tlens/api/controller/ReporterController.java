@@ -47,7 +47,7 @@ public class ReporterController {
 
     @GetMapping("/news")
     public ResponseEntity<?> getNewsByReporter(@RequestParam String reporter, @RequestParam int pageNo, @RequestParam int pageSize) {
-        List<NewsInfoDTO> result = reporterService.getNewsByCategory(reporter, pageNo, pageSize);
+        List<NewsInfoDTO> result = reporterService.getNewsByReporter(reporter, pageNo, pageSize);
 
         return new ResponseEntity<>(new ResponseDto<>(ResponseEnum.PRODUCT_CATEGORY_SUCCESS, result), HttpStatus.OK);
     }

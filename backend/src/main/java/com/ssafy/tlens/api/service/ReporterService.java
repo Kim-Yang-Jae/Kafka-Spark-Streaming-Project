@@ -14,6 +14,6 @@ public interface ReporterService {
     void updateToReporter(TrendRequestDTO trendRequestDTO);
     void deleteToReporter(Long id);
     List<ReporterInfoDTO> getReportersByPress(Long pressId);
-    List<NewsInfoDTO> getNewsByCategory(String category, int pageNo, int pageSize);
+    List<NewsInfoDTO> getNewsByReporter(String category, int pageNo, int pageSize);
     void insert(ReporterInfoDTO reporterInfoDTO, Press press);
 }
