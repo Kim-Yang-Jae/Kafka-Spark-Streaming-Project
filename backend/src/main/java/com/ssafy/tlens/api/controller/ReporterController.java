@@ -3,6 +3,7 @@ package com.ssafy.tlens.api.controller;
 import com.ssafy.tlens.api.request.TrendRequestDTO;
 import com.ssafy.tlens.api.response.NewsInfoDTO;
 import com.ssafy.tlens.api.response.ReporterInfoDTO;
+import com.ssafy.tlens.api.response.WordCountDTO;
 import com.ssafy.tlens.api.service.ReporterService;
 import com.ssafy.tlens.common.ResponseDto;
 import com.ssafy.tlens.enums.ResponseEnum;
@@ -39,8 +40,8 @@ public class ReporterController {
     }
 
     @GetMapping("/press")
-    public ResponseEntity<?> getReportersByPress(@RequestParam Long pressId) {
-        List<ReporterInfoDTO> result = reporterService.getReportersByPress(pressId);
+    public ResponseEntity<?> getReportersByPress(@RequestParam String press, @RequestParam int pageNo, @RequestParam int pageSize) {
+        List<ReporterInfoDTO> result = reporterService.getReportersByPressOffset(press, pageNo, pageSize);
 
         return new ResponseEntity<>(new ResponseDto<>(ResponseEnum.PRODUCT_CATEGORY_SUCCESS, result), HttpStatus.OK);
     }
@@ -48,6 +49,13 @@ public class ReporterController {
     @GetMapping("/news")
     public ResponseEntity<?> getNewsByReporter(@RequestParam String reporter, @RequestParam int pageNo, @RequestParam int pageSize) {
         List<NewsInfoDTO> result = reporterService.getNewsByReporter(reporter, pageNo, pageSize);
+
+        return new ResponseEntity<>(new ResponseDto<>(ResponseEnum.PRODUCT_CATEGORY_SUCCESS, result), HttpStatus.OK);
+    }
+
+    @GetMapping("/category/count")
+    public ResponseEntity<?> getCategoryByReporterNews(@RequestParam String reporter) {
+        List<WordCountDTO> result = reporterService.getCategoryCountByReporterNews(reporter);
 
         return new ResponseEntity<>(new ResponseDto<>(ResponseEnum.PRODUCT_CATEGORY_SUCCESS, result), HttpStatus.OK);
     }
