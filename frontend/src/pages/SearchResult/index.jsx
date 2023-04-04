@@ -31,8 +31,8 @@ const SearchResult = () => {
           return news.title;
         })
         .join(" ");
-      const cleanstr = combinedTitle.replace(/[^\p{L}\p{N}\s]/gu, "");
-      const count = countWords(cleanstr);
+      const cleanStr = combinedTitle.replace(/[^\p{L}\p{N}\s]/gu, "");
+      const count = countWords(cleanStr);
       setSplitKeyword(count);
     } catch (error) {
       console.log(error);

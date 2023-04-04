@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Main.scss";
 
 // Charts
@@ -12,108 +12,107 @@ import SearchResultChart2 from "../../Charts-Components/SearchResultChart2";
 import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
 
-// Api 
-import {defaultInstance} from "../../../apis/news"
-
+// Api
+import { defaultInstance } from "../../../apis/news";
 
 const MainChart = (props) => {
-  const [products, setProducts] = useState([]);
-  const [keyword, setKeyword] = useState("전체");
-  const [articleField, setArticleField] = useState("28,467");
-  const [totalArticle, setTotalArticle] = useState("2,846,710,200");
-  const [page, setPage] = useState(0);
-  const [pageSize, setPageSize] = useState(1000); 
   const [keywordNews, setKeywordNews] = useState([]);
-  const [category, setCategory] = useState("전체")
+  const [todayNewsCount, setTodayNewsCount] = useState("");
+  const [allNewsCount, setAllNewsCount] = useState("");
+  const [category, setCategory] = useState("");
+  const [allKeywordNews, setAllKeywordNews] = useState([]);
 
-  const getCategoryNews = async (category, page, pageSize) => {
-    try {
-      const response = await defaultInstance.get("/category/news", {
-        params: {
-          category: category,
-          pageNo: page,
-          pageSize: pageSize
-        },
-      });
-      console.log(response);
-      setKeywordNews(response.data.content)
-      
-      if (response.data.content && response.data.content.length > 0) {
-        setPage((page) => page + 1);
+  const pageSize = 10;
+  const mainBotLeftRef = useRef(null);
+
+  const getCategoryNews = async (category, page) => {
+    if (page === 0) {
+      try {
+        const response = await defaultInstance.get("/category/news", {
+          params: { category, pageNo: page, pageSize },
+        });
+        const response2 = await defaultInstance.get("/category/news", {
+          params: { category, pageNo: 0, pageSize: 1000 },
+        });
+        setAllKeywordNews(response2.data.conten);
+        setKeywordNews(response.data.content);
+      } catch (error) {
+        console.log(error);
       }
-  
-    } catch (error) {
-      console.log(error);
+    } else {
+      try {
+        const response = await defaultInstance.get("/category/news", {
+          params: { category, pageNo: page, pageSize },
+        });
+        const response2 = await defaultInstance.get("/category/count", {
+          params: { category },
+        });
+        setTodayNewsCount(addCommas(response2.data.content.countRecentNews));
+        setAllNewsCount(addCommas(response2.data.content.countAllNews));
+        setKeywordNews((prevKeywordNews) => [
+          ...prevKeywordNews,
+          ...response.data.content,
+        ]);
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
+  const addCommas = (num) => {
+    const str = num.toString();
+    const len = str.length;
+    if (len <= 3) {
+      return str;
+    } else {
+      return addCommas(str.slice(0, len - 3)) + "," + str.slice(len - 3);
+    }
+  };
 
   useEffect(() => {
+    setKeywordNews([]);
+    setCategory("");
     if (props?.value === "1") {
-      setKeyword("전체(All)");
-      setArticleField("28,467");
-      setTotalArticle("2,846,710,200");
-      setCategory("전체")
+      setCategory("전체");
     } else if (props?.value === "2") {
-      setKeyword("정치(Politics)");
-      setArticleField("8,332");
-      setTotalArticle("746,710,200");
-      setCategory("정치")
+      setCategory("IT");
     } else if (props?.value === "3") {
-      setKeyword("경제(Economy)");
-      setArticleField("2,301");
-      setTotalArticle("259,630,750");
-      setCategory("경제")
+      setCategory("경제");
     } else if (props?.value === "4") {
-      setKeyword("국제(International)");
-      setArticleField("1,564");
-      setTotalArticle("120,320,520");
-      setCategory("국제")
+      setCategory("사회");
     } else if (props?.value === "5") {
-      setKeyword("사회(Society)");
-      setArticleField("2,351");
-      setTotalArticle("153,620,198");
-      setCategory("사회")
+      setCategory("정치");
     } else if (props?.value === "6") {
-      setKeyword("문화(Culture)");
-      setArticleField("467");
-      setTotalArticle("998,253");
-      setCategory("문화")
+      setCategory("세계");
     } else if (props?.value === "7") {
-      setKeyword("연예(Entertainments)");
-      setArticleField("5,234");
-      setTotalArticle("124,360,717");
-      setCategory("연예")
+      setCategory("생활");
     } else if (props?.value === "8") {
-      setKeyword("스포츠(Sports)");
-      setArticleField("4,250");
-      setTotalArticle("393,523,628");
-      setCategory("스포츠")
+      setCategory("스포츠");
     } else if (props?.value === "9") {
-      setKeyword("과학(Science)");
-      setArticleField("956");
-      setTotalArticle("453,620,520");
-      setCategory("과학")
-    } else if (props?.value === "10") {
-      setKeyword("환경(Environment)");
-      setArticleField("220");
-      setTotalArticle("300,526,356");
-      setCategory("환경")
+      setCategory("연예");
     } else {
-      setKeyword("IT");
-      setArticleField("2,792");
-      setTotalArticle("292,399,211");
-      setCategory("IT")
+      setCategory("오피니언");
     }
   }, [props.value]);
 
-  // 컴포넌트가 마운트되면 첫 페이지 데이터 불러오기
   useEffect(() => {
-    getCategoryNews(category, page, pageSize);
-    console.log(category)
-    console.log(keywordNews[0])
+    getCategoryNews(category, 0);
   }, [category]);
 
+  const handleScroll = () => {
+    const el = mainBotLeftRef.current;
+    if (el.scrollTop + el.clientHeight >= el.scrollHeight) {
+      getCategoryNews(category, Math.ceil(keywordNews.length / pageSize));
+    }
+  };
+
+  useEffect(() => {
+    const el = mainBotLeftRef.current;
+    el.addEventListener("scroll", handleScroll);
+    return () => {
+      el.removeEventListener("scroll", handleScroll);
+    };
+  }, [keywordNews.length]);
 
   return (
     <div>
@@ -132,8 +131,7 @@ const MainChart = (props) => {
           }}
         >
           <h3 className="main-top-h3">오늘 작성된 기사</h3>
-          <h2 className="main-top-h2">{articleField} 건</h2>
-
+          <h2 className="main-top-h2">{todayNewsCount} 건</h2>
         </Box>
         <hr className="main-top-hr" />
         <Box
@@ -150,12 +148,12 @@ const MainChart = (props) => {
           }}
         >
           <h3 className="main-top-h3">모든 기사 데이터</h3>
-          <h2 className="main-top-h2">{totalArticle}건</h2>
+          <h2 className="main-top-h2">{allNewsCount} 건</h2>
         </Box>
       </div>
       <br />
       <div className="main-mid">
-        <h2>T:LENS 키워드 통계 : {keyword}</h2>
+        <h2>T:LENS 키워드 통계 : {category}</h2>
       </div>
       <Divider />
       <div className="main-mid-wrapper">
@@ -170,10 +168,12 @@ const MainChart = (props) => {
         </div>
       </div>
       <Divider />
-      <h2 className="main-bot-h2">T:LENS 키워드 뉴스 : {keyword}</h2>
+      <h2 className="main-bot-h2">T:LENS 키워드 뉴스 : {category}</h2>
       <Divider />
       <div className="main-bot-wrapper">
-        <div className="main-bot-left"><MainNewsCard key={keywordNews.news_id} newsData={keywordNews}/></div>
+        <div className="main-bot-left" ref={mainBotLeftRef}>
+          <MainNewsCard newsData={keywordNews} />
+        </div>
         <Divider orientation="vertical" flexItem />
         <div className="main-bot-right">
           <div className="main-bot-right-wrapper">
@@ -186,7 +186,7 @@ const MainChart = (props) => {
             <h2 className="main-bot-right-h2">시간별 핫 키워드(Top 10)</h2>
             <br />
             <div className="main-bot-right-2">
-              <SearchResultChart2 />
+              <SearchResultChart2 keyword={category} />
             </div>
           </div>
         </div>

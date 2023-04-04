@@ -21,17 +21,14 @@ import StarIcon from "@mui/icons-material/Star";
 import AutoAwesomeOutlinedIcon from "@mui/icons-material/AutoAwesomeOutlined";
 import EmojiEventsOutlinedIcon from "@mui/icons-material/EmojiEventsOutlined";
 import ImportantDevicesOutlinedIcon from "@mui/icons-material/ImportantDevicesOutlined";
-import ScienceOutlinedIcon from "@mui/icons-material/ScienceOutlined";
-import SolarPowerIcon from "@mui/icons-material/SolarPower";
+import PsychologyAltIcon from "@mui/icons-material/PsychologyAlt";
 
 const Main = () => {
   const [value, setValue] = useState("1");
 
   const handleChange = (event, newValue) => {
-    console.log(event);
     setValue(newValue);
   };
-  console.log(value);
 
   return (
     <TabContext value={value}>
@@ -50,8 +47,9 @@ const Main = () => {
         >
           <Tab icon={<AppsIcon fontSize="large" />} label="전체" value="1" />
           <Tab
-            icon={<HandshakeIcon fontSize="large" />}
-            label="정치"
+            icon={<ImportantDevicesOutlinedIcon fontSize="large" />}
+            sx={{ width: "10%" }}
+            label="IT"
             value="2"
           />
           <Tab
@@ -59,40 +57,34 @@ const Main = () => {
             label="경제"
             value="3"
           />
+          <Tab icon={<GroupsIcon fontSize="large" />} label="사회" value="4" />
+          <Tab
+            icon={<HandshakeIcon fontSize="large" />}
+            label="정치"
+            value="5"
+          />
+
           <Tab
             icon={<LanguageIcon fontSize="large" />}
-            label="국제"
-            value="4"
+            label="세계"
+            value="6"
           />
-          <Tab icon={<GroupsIcon fontSize="large" />} label="사회" value="5" />
-          <Tab icon={<StarIcon fontSize="large" />} label="문화" value="6" />
-          <Tab
-            icon={<AutoAwesomeOutlinedIcon fontSize="large" />}
-            label="연예"
-            value="7"
-          />
+
+          <Tab icon={<StarIcon fontSize="large" />} label="생활" value="7" />
           <Tab
             icon={<EmojiEventsOutlinedIcon fontSize="large" />}
             label="스포츠"
             value="8"
           />
           <Tab
-            icon={<ScienceOutlinedIcon fontSize="large" />}
-            sx={{ width: "10%" }}
-            label="과학"
+            icon={<AutoAwesomeOutlinedIcon fontSize="large" />}
+            label="연예"
             value="9"
           />
           <Tab
-            icon={<SolarPowerIcon fontSize="large" />}
-            sx={{ width: "10%" }}
-            label="환경"
+            icon={<PsychologyAltIcon fontSize="large" />}
+            label="오피니언"
             value="10"
-          />
-          <Tab
-            icon={<ImportantDevicesOutlinedIcon fontSize="large" />}
-            sx={{ width: "10%" }}
-            label="IT"
-            value="11"
           />
         </Tabs>
         <Divider />

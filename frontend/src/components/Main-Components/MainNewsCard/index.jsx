@@ -10,7 +10,7 @@ import { Divider } from "@mui/material";
 
 const MainNewsCard = ({ newsData }) => {
   if (!newsData) return null; // add conditional check
-  console.log(newsData);
+
   return (
     <div className="news-container">
       {newsData.map((V, index) => {
@@ -31,7 +31,9 @@ const MainNewsCard = ({ newsData }) => {
             }}
           >
             <AspectRatio ratio="1" sx={{ width: "15%" }}>
-              <img src={V.thumbnail} loading="lazy" alt="" />
+              {V.thumbnail ? (
+                <img src={V.thumbnail} loading="lazy" alt="" />
+              ) : null}
             </AspectRatio>
             <Divider orientation="vertical" flexItem />
             <div className="newscard-wrapper" style={{ width: "80%" }}>
