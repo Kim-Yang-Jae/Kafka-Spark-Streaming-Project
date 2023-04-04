@@ -6,6 +6,7 @@ import com.ssafy.tlens.common.exception.handler.NotFoundException;
 import com.ssafy.tlens.entity.rdbms.News;
 import com.ssafy.tlens.repository.NewsRepository;
 import com.ssafy.tlens.repository.NewsSearchRepository;
+import com.ssafy.tlens.repository.PressRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,7 @@ import java.util.stream.Collectors;
 public class NewsServiceImpl implements NewsService {
     private final NewsRepository newsRepository;
     private final NewsSearchRepository newsSearchRepository;
+    private final PressRepository pressRepository;
 
     // 매개변수로 전달받은 객체를 통해 기사를 RDBMS에 삽입한다.
     @Transactional
@@ -53,8 +55,9 @@ public class NewsServiceImpl implements NewsService {
 
         List<News> newses = newsSearchRepository.findBySearch(searchword, pageNo, pageSize);
 
+
         List<NewsInfoDTO> newsInfoList = newses.stream()
-                .map(news -> new NewsInfoDTO(news))
+                .map(news -> new NewsInfoDTO(news, pressRepository.findByName(news.getPress()).getThumbnail()))
                 .collect(Collectors.toList());
 
         return newsInfoList;

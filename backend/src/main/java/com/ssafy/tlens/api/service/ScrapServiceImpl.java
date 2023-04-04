@@ -21,6 +21,7 @@ public class ScrapServiceImpl implements ScrapService {
     private final UserRepository userRepository;
     private final NewsRepository newsrepository;
     private final ScrapRepository scrapRepository;
+    private final PressRepository pressRepository;
 
     @Override
     @Transactional
@@ -70,7 +71,7 @@ public class ScrapServiceImpl implements ScrapService {
         List<News> newsList = newsrepository.findScrapNewsByUserId(userId);
 
         List<NewsInfoDTO> newsInfoList = newsList.stream()
-                .map(news -> new NewsInfoDTO(news))
+                .map(news -> new NewsInfoDTO(news, pressRepository.findByName(news.getPress()).getThumbnail()))
                 .collect(Collectors.toList());
 
         return new ListAndCntResponseDTO(newsInfoList, newsInfoList.size());

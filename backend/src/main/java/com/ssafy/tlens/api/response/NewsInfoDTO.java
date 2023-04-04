@@ -7,18 +7,22 @@ import lombok.*;
 @NoArgsConstructor
 public class NewsInfoDTO {
 
+    private Long newsId;
     private String title;
     private String summary;
     private String reporter;
     private String link;
     private String thumbnail;
     private String category;
-    public NewsInfoDTO(News news) {
+    private String pressThumbnail;
+    public NewsInfoDTO(News news, String url) {
+        newsId = news.getNewsId();
         title = news.getTitle();
         summary = news.getSummary();
         reporter = news.getReporter();
         link = news.getOriginalLink();
         thumbnail = news.getThumbNail();
         category = news.getCategory();
+        pressThumbnail = url;
     }
 }

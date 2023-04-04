@@ -92,7 +92,7 @@ public class ReporterServiceImpl implements ReporterService {
         List<News> newses = newsSearchRepository.findByReporter(reporter, pageNo, pageSize);
 
         return newses.stream()
-                .map(news -> new NewsInfoDTO(news))
+                .map(news -> new NewsInfoDTO(news, pressRepository.findByName(news.getPress()).getThumbnail()))
                 .collect(Collectors.toList());
     }
 
