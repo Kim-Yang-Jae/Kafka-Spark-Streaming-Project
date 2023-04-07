@@ -1,0 +1,23 @@
+@media screen and (min-width: 768px) {
+  .quit-verification{
+    width: 20vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .quit-verification{
+    width: 23vw;
+  }
+}
+
+
+
+
+.quit-verification{
+  background-color: #0066CC;
+  color: white;
+  padding:1;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+

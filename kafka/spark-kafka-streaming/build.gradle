@@ -1,0 +1,24 @@
+plugins {
+    id "java"
+}
+
+group "com.tlens"
+version "1.0-SNAPSHOT"
+sourceCompatibility = "8"
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    apache_spark_version = "3.3.2"
+}
+
+dependencies {
+    implementation "org.apache.spark:spark-sql-kafka-0-10_2.12:$apache_spark_version"
+    compileOnly "org.apache.spark:spark-mllib_2.12:$apache_spark_version"
+    implementation 'org.openkoreantext:open-korean-text:2.3.1'
+    implementation 'mysql:mysql-connector-java:8.0.32'
+
+
+}

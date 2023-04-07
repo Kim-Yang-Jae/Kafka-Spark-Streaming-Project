@@ -1,0 +1,47 @@
+@media screen and (min-width: 768px) {
+  .membership-title{
+    width: 20vw;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 768px) {
+  .membership-title{
+    width: 23vw;
+  }
+}
+
+
+.membership-title{
+  background-color: #0066CC;
+  color: white;
+  padding:1;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.password-form {
+  font-size: 25px;
+  margin-top: 25px;
+  text-align: start;
+  flex-direction: column;
+  align-items: start;
+}
+
+.password-fields {
+  font-size: 25px;
+  margin-top: 25px;
+  border-radius: 50px !important;
+}
+
+
+// .blue-outline .MuiInputBase-input {
+//   border: 2px solid #0066CC;
+//   border-radius: 50px;
+//   height:20px
+// }
+
+.auth-button{
+  display: flex;
+  justify-content: center;
+}

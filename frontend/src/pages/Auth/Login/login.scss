@@ -1,0 +1,79 @@
+// @media all and (min-width: 1024px) {
+//   .input-forms {
+//     padding: 50px;
+//     input{
+//       width: 20vw;
+//       margin-left: 20px;
+//     }
+//   }
+
+// }
+// @media all and (max-width: 1024px) {
+//   .input-forms {
+//     padding: 50px;
+//     input{
+//       width: 20vw;
+//     }
+//   }
+// }
+
+// @media all and (max-width: 768px) {
+//   .input-forms {
+//     padding: 60px;
+//     input{
+//       width: 20vw;
+//     }
+//   }
+// }
+
+
+.login-wrapper {
+  font-family: 'Noto Sans KR', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    border-radius: 3%;
+    width: 100%;
+    background-image: url("../../../../public/img/paper-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .input-forms {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 50px;
+    
+    img{
+      width: 200px;
+      height: 100%;
+      margin-bottom: 15px;
+    }
+
+    .input-label {
+      margin-right: 20px;
+      font-size: 15px;
+      font-weight: bold;
+      color: #000000;
+    }
+    .input-forms-item {
+      margin-top: 20px;
+      padding: 5px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .error-message {
+      font-size: 15px;
+      text-align: start;
+      color: red;
+      font-weight: bold;
+    }
+  }
+}
+
+

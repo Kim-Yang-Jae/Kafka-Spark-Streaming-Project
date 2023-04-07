@@ -1,0 +1,7 @@
+spring:
+  kafka:
+    bootstrap-servers: j8c206.p.ssafy.io:9092
+    properties:
+      session.timeout.ms: 45000
+
+server.port: 8090

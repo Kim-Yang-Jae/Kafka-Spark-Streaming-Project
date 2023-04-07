@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap');
+
+.searchresult-wrapper {
+    .searchresult-container {
+      text-align: left;
+      display: flex;
+  
+      .searchresult-text {
+        width: 65%;
+      }
+  
+      .searchresult-text2 {
+        width: 35%;
+      }
+    }
+  
+    .searchresult-main {
+      display: flex;
+  
+      .searchresult-news {
+        margin-top: 1%;
+        width: 65%;
+        justify-content: center;
+        height: 105vh;
+        overflow-y: auto;
+      }
+
+      .searchresult-news::-webkit-scrollbar {
+        display: none;
+      }
+
+      .searchresult-chart {
+        width: 35%;
+        text-align: left;
+        margin: 1%;
+      }
+    }
+  }

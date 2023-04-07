@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+.reporterdetail-wrapper {
+  background-color: #0066cc;
+  border-radius: 20px;
+  display: flex;
+  text-align: left;
+
+  .reporterdetail-left {
+    width: 40%;
+    margin: 1.5% 0 1.5% 1.5%;
+
+    .reporterdetail-left-top {
+      background-color: white;
+      border-radius: 20px;
+      width: 96%;
+      display: flex;
+
+      .reporterdetail-left-top-1 {
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        .img1 {
+          width: 80%;
+          border-radius: 20px;
+        }
+      }
+
+      .reporterdetail-left-top-2 {
+        width: 65%;
+        margin: 3%;
+        .img2 {
+          width: 40%;
+          height: 20%;
+          margin-bottom: 5%;
+        }
+        h2 {
+          margin: 0;
+        }
+        h3 {
+          margin: 0;
+        }
+        .reporter-button {
+          float: right;
+        }
+      }
+    }
+
+    .reporterdetail-left-main {
+      background-color: white;
+      border-radius: 20px;
+      width: 96%;
+
+      .reporterdetail-left-main-h3 {
+        margin-left: 3%;
+      }
+
+      .reporterdetail-left-chart {
+        width: 90%;
+      }
+
+      .reporterdetail-left-main-chart1 {
+        display: flex;
+
+        .reporterdetail-left-main-chart1-1 {
+          width: 50%;
+
+          .reporterdetail-left-main-h5 {
+            margin-left: 3%;
+          }
+        }
+
+        .reporterdetail-left-main-chart2 {
+          width: 50%;
+          align-content: center;
+
+          .reporterdetail-left-main-h5 {
+            margin-left: 3%;
+          }
+        }
+      }
+    }
+  }
+
+  .reporterdetail-right {
+    width: 58%;
+    margin: 1.5% 1.5% 1.5% 0;
+    background: white;
+    border-radius: 20px;
+    text-align: left;
+
+    .reporterdetail-right-h2 {
+      margin-left: 3%;
+    }
+
+    .reporterdetail-right-news {
+      height: 66vh;
+      overflow-y: auto;
+      border: 1px solid #d8d8d8;
+      border-radius: 10px;
+      margin: -1% 2% 0 2%;
+      padding: 0 0 1% 0;
+      justify-content: center;
+    }
+    .reporterdetail-right-news::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

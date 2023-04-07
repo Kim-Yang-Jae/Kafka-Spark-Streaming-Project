@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+// .inner-page {
+//   background-image: url('../../../public/img/whitepaper.jpg');
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+.outer {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* 화면에서 스크롤바 안보이게 */
+.outer::-webkit-scrollbar {
+  display: none;
+}
+
+.first-page{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.inner-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+}
+
+
+.final-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 100px;
+}
+
+.divider {
+  width: 100%;
+  height: 5px;
+  background-color: gray;
+}

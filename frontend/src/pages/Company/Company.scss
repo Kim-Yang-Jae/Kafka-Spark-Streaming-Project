@@ -1,0 +1,37 @@
+@keyframes smoothAppear {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+.company-main {
+  opacity: 0;
+  animation: smoothAppear 2s forwards;
+  animation-delay: 0.2s;
+  .MuiBox-root:first-child {
+    display: flex;
+    width: 100%;
+    border-radius: 40px;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      color: white;
+    }
+    h3 {
+      color: white;
+    }
+  }
+
+  .MuiBox-root:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

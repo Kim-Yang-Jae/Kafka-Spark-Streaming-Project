@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+
+.page-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.box1 {
+  flex-basis: 50%;
+  text-align: start;
+}
+
+.box2 {
+  flex-basis: 50%;
+  margin-left: 100px;
+}
+
+.page1-image{
+  width: 60vw;
+  height: 80vh;
+}

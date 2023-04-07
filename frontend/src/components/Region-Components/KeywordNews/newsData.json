@@ -1,0 +1,236 @@
+[
+  {
+    "id": 1,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "한국의 코로나19 확진자 수가 하루 4,000명을 돌파했습니다",
+    "date": "2022-03-24",
+    "region": "서울",
+    "category": "사회",
+    "keyword": ["코로나19", "확진자", "서울"]
+  },
+  {
+    "id": 2,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "국내에서 새로운 코로나19 변이가 발견되어 대처에 총력을 기울이고 있습니다",
+    "date": "2022-03-23",
+    "region": "전남",
+    "category": "정치",
+    "keyword": ["코로나19", "변이", "대처"]
+  },
+  {
+    "id": 3,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "한국에서는 올해도 추석에 맞추어 재난문자를 보내 기대감을 높이고 있습니다",
+    "date": "2022-03-23",
+    "region": "서울",
+    "category": "사회",
+    "keyword": ["추석", "재난문자", "기대감"]
+  },
+  {
+    "id": 4,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "수도권 지역에서는 미세먼지 농도가 매우 높아, 주의를 당부하고 있습니다",
+    "date": "2022-03-22",
+    "region": "경기",
+    "category": "환경",
+    "keyword": ["미세먼지", "주의", "수도권"]
+  },
+  {
+    "id": 5,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "한국에서는 올해 설날에도 코로나19로 인해 경조사 문화가 크게 바뀌게 될 것으로 예상됩니다",
+    "date": "2022-02-01",
+    "region": "충남",
+    "category": "사회",
+    "keyword": ["설날", "코로나19", "경조사"]
+  },
+  {
+    "id": 6,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "미국에서는 트럼프 대통령이 대선 패배 후, 퇴임식을 거부하고 있습니다",
+    "date": "2022-01-20",
+    "region": "대구",
+    "category": "국제",
+    "keyword": ["트럼프", "대선패배", "퇴임식"]
+  },
+  {
+    "id": 7,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "한국에서는 제주도 지역에서의 코로나19 확진자 발생으로 인해 전국적으로 경계가 올라가고 있습니다",
+    "date": "2022-01-05",
+    "region": "대전",
+    "category": "사회",
+    "keyword": ["코로나19", "확진자", "경계"]
+  },
+  {    
+    "id": 8,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",    
+    "title": "애플, 새로운 아이폰 출시 예정",    
+    "date": "2023-03-24",    
+    "region": "경남",    
+    "category": "IT",    
+    "keyword": ["애플", "아이폰", "출시"]
+  },
+  {
+    "id": 9,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "구글, AI 언어 모델 개발 중",
+    "date": "2023-03-23",
+    "region": "울산",
+    "category": "IT",
+    "keyword": ["구글", "AI", "언어 모델"]
+  },
+  {
+    "id": 10,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "삼성, 스마트폰 출시 계획 발표",
+    "date": "2023-03-23",
+    "region": "경북",
+    "category": "IT",
+    "keyword": ["친환경적", "스마트폰", "출시"]
+  },
+  {
+    "id": 11,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "아마존, 클라우드 서비스 사용량 급증",
+    "date": "2023-03-22",
+    "region": "대구",
+    "category": "IT",
+    "keyword": ["아마존", "클라우드 서비스", "사용량"]
+  },
+  {
+    "id": 12,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "네이버, 인공지능 기술 개발 중",
+    "date": "2023-03-21",
+    "region": "광주",
+    "category": "IT",
+    "keyword": ["네이버", "인공지능", "기술"]
+  },
+  {
+    "id": 13,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "마이크로소프트, 윈도우 11 출시 예정",
+    "date": "2023-03-20",
+    "region": "제주",
+    "category": "IT",
+    "keyword": ["마이크로소프트", "윈도우 11", "출시"]
+  },
+  {
+    "id": 14,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "한국에서도 AI 전문가 부족 현상 심화",
+    "date": "2023-03-23",
+    "region": "경남",
+    "category": "IT",
+    "keyword": ["AI", "전문가", "부족"]
+  },
+  {
+    "id": 15,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "삼성, 5G 스마트폰 출시 예정",
+    "date": "2023-03-23",
+    "region": "서울",
+    "category": "IT",
+    "keyword": ["삼성", "5G", "스마트폰"]
+  },
+  {
+    "id": 16,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "SKT, 자율주행 차량 사업 진출",
+    "date": "2023-03-23",
+    "region": "경기",
+    "category": "IT",
+    "keyword": ["SKT", "자율주행", "차량"]
+  },
+  {
+    "id": 17,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "네이버, 인공지능 기반 음성인식 기술 발전",
+    "date": "2023-03-23",
+    "region": "경기",
+    "category": "IT",
+    "keyword": ["네이버", "인공지능", "음성인식"]
+  },
+  {
+    "id": 18,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "한화, 태양광 발전 사업 확대",
+    "date": "2023-03-23",
+    "region": "경북",
+    "category": "환경",
+    "keyword": ["한화", "태양광", "발전"]
+  },
+  {
+    "id": 19,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "LG, 롤러블 스마트폰 출시",
+    "date": "2023-03-23",
+    "region": "서울",
+    "category": "IT",
+    "keyword": ["LG", "롤러블", "스마트폰"]
+  },
+  {
+    "id": 20,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "신한, 디지털 뱅크 출시 예정",
+    "date": "2023-03-23",
+    "region": "서울",
+    "category": "금융",
+    "keyword": ["신한", "디지털 뱅크"]
+  },
+  {
+    "id": 21,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "기아, 전기차 생산량 확대 계획 발표",
+    "date": "2023-03-23",
+    "region": "광주",
+    "category": "환경",
+    "keyword": ["기아", "전기차", "생산량"]
+  },
+  {
+    "id": 22,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "최신 기술 동향 발표",
+    "date": "2023-03-23",
+    "region": "세종",
+    "category": "IT",
+    "keyword": ["기술", "동향"]
+  },
+  {
+    "id": 23,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "의료기술 개발",
+    "date": "2023-03-23",
+    "region": "부산",
+    "category": "의료",
+    "keyword": ["의료기술", "개발"]
+  },
+  {
+    "id": 24,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "농업 생산성 개선",
+    "date": "2023-03-24",
+    "region": "전남",
+    "category": "농업",
+    "keyword": ["농업", "생산성", "개선"]
+  },
+  {
+    "id": 25,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "환경 규제 강화",
+    "date": "2023-03-24",
+    "region": "강원",
+    "category": "환경",
+    "keyword": ["환경", "규제", "강화"]
+  },
+  {
+    "id": 26,
+    "thumbnail":"https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90",
+    "title": "스마트 홈 IoT 시장 성장",
+    "date": "2023-03-25",
+    "region": "대구",
+    "category": "IT",
+    "keyword": ["스마트 홈", "IoT", "시장", "성장"]
+  }
+]

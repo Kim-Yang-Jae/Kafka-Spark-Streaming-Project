@@ -1,0 +1,55 @@
+@keyframes smoothAppear {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+.main-container {
+  display: flex;
+  flex-grow: 1;
+  max-width: 100%;
+  opacity: 0;
+  animation: smoothAppear 2s forwards;
+  animation-delay: 0.1s;
+  & .MuiTabs-root {
+    width: 100%;
+    background-color: white;
+  }
+
+  & .MuiTabs-scroller {
+    overflow-x: auto;
+  }
+
+  & .MuiTabs-flexContainer {
+    justify-content: flex-start;
+  }
+
+  & .MuiTab-root {
+    width: 10%;
+
+    & .MuiTab-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  & .MuiDivider-root {
+    margin-top: 1rem;
+  }
+}
+.main-transition-enter {
+  // 애니메이션 시작할 때 적용할 CSS
+  opacity: 0;
+}
+
+.main-transition-enter-active {
+  // 애니메이션 동작할 때 적용할 CSS
+  opacity: 1;
+  transition: all 500ms;
+}

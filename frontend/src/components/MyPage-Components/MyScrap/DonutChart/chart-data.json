@@ -1,0 +1,36 @@
+{
+  "chartData": [
+    {
+      "value": 44,
+      "label": "정치"
+    },
+    {
+      "value": 55,
+      "label": "경제"
+    },
+    {
+      "value": 41,
+      "label": "국제"
+    },
+    {
+      "value": 17,
+      "label": "사회"
+    },
+    {
+      "value": 15,
+      "label": "문화"
+    },
+    {
+      "value": 35,
+      "label": "연예"
+    },
+    {
+      "value": 52,
+      "label": "과학"
+    },
+    {
+      "value": 22,
+      "label": "IT"
+    }
+  ]
+}

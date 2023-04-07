@@ -1,0 +1,130 @@
+[
+  {
+    "id": "0",
+    "name": "삼성전자",
+    "ename": "Samsung Electronics Co., Ltd.",
+    "category": "통신 및 송 장비 제조업",
+    "ceo": "한종희, 경계현",
+    "birth": "1969/01/13"
+  },
+  {
+    "id": "1",
+    "name": "현대자동차",
+    "ename": "Hyundai Motor Company",
+    "category": "승용차 및 기타 여객용 자동차 제조업",
+    "ceo": "정의선, 장재훈",
+    "birth": "1967-12-29"
+  },
+  {
+    "id": "2",
+    "name": "POSCO홀딩스",
+    "ename": "POSCO Holdings Inc.",
+    "category": "제철, 제강 및 합금철 제조업",
+    "ceo": "최정우, 전중선",
+    "birth": "1968-04-01"
+  },
+  {
+    "id": "3",
+    "name": "LG전자",
+    "ename": "LG Electronics Inc.",
+    "category": "통신 및 송 장비 제조업",
+    "ceo": "조주완, 배두용",
+    "birth": "2002-04-01"
+  },
+  {
+    "id": "4",
+    "name": "기아자동차",
+    "ename": "Kia Corporation",
+    "category": "자동차 제조업",
+    "ceo": "송호정, 최준영",
+    "birth": "1944-12-10"
+  },
+  {
+    "id": "5",
+    "name": "한국전력공사",
+    "ename": "KOREA ELECTRIC POWER CORPORATION",
+    "category": "송전 및 배전업",
+    "ceo": "정승일",
+    "birth": "1961-07-01"
+  },
+  {
+    "id": "6",
+    "name": "한화",
+    "ename": "Hanwha Corporation",
+    "category": "화약 및 불꽃제품 제조업",
+    "ceo": "금춘수, 옥경석",
+    "birth": "1952-10-28"
+  },
+  {
+    "id": "7",
+    "name": "SK하이닉스",
+    "ename": "SK hynix Inc.",
+    "category": "유사 반도체소자 제조업",
+    "ceo": "박정호, 곽노정",
+    "birth": "1949-10-15"
+  },
+  {
+    "id": "8",
+    "name": "LG화학",
+    "ename": "LG Chem Ltd.",
+    "category": "기초 화학물질 제조업",
+    "ceo": "신학철",
+    "birth": "2001-04-01"
+  },
+  {
+    "id": "9",
+    "name": "현대모비스",
+    "ename": "Hyundai Mobis Co., Ltd.",
+    "category": "자동차 신품 부품 제조업",
+    "ceo": "정의선, 조성환",
+    "birth": "1977-07-01"
+  },
+  {
+    "id": "10",
+    "name": "삼성생명",
+    "ename": "Samsung Life Insurance Co., Ltd.",
+    "category": "생명 보험업",
+    "ceo": "전영묵",
+    "birth": "1957-04-04"
+  },
+  {
+    "id": "11",
+    "name": "GS칼텍스",
+    "ename": "GS-Caltex Corporation",
+    "category": "원유 정제처리업",
+    "ceo": "허세홍",
+    "birth": "1967-05-19"
+  },
+  {
+    "id": "12",
+    "name": "삼성물산",
+    "ename": "Samsung C&T Corporation",
+    "category": "기타 전문 도매업",
+    "ceo": "고정석, 오세철, 한승환",
+    "birth": "1963-12-23"
+  },
+  {
+    "id": "13",
+    "name": "하나금융지주",
+    "ename": "Hana Bank",
+    "category": "국내은행",
+    "ceo": "박성호",
+    "birth": "1959-12-01"
+  },
+  {
+    "id": "14",
+    "name": "삼성SDI",
+    "ename": "SAMSUNG SDI CO., LTD.",
+    "category": "축전지 제조업",
+    "ceo": "최윤호",
+    "birth": "1970-01-20"
+  },
+  {
+    "id": "15",
+    "name": "LG디스플레이",
+    "ename": "LG Display Co., Ltd",
+    "category": "액정 표시장치 제조업",
+    "ceo": "정호영",
+    "birth": "1985-02-28"
+  }
+]

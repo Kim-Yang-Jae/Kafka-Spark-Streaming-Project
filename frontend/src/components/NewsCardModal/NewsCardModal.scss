@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 500px;
+  height: 250px;
+  opacity: 90%;
+  border: 5px solid #0066cc;
+}
+
+
+.modal-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+}
+
+.modal-image {
+  margin: 15px;
+}
+
+.modal-content {
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin-right: 10px;
+}
+.modal-body-category{
+  color: #0066cc;
+  font-weight: bold;
+}
+
+.modal-body-reporter{
+  font-weight: bold;
+}
+
+.modal-bottom {
+  height: 50px;
+  justify-content: end;
+  Button{
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,44 @@
+[
+  { 
+    "id": "1",
+    "image": "https://images.chosun.com/resizer/lfBy3Dzk2Xk-8TX7k0lQc0NTpkM=/108x108/smart/s3.amazonaws.com/arc-authors/chosun/9a50bdef-a86f-4924-8d09-93b6670cf2fc.png",
+    "name": "주형식",
+    "field":"정치",
+    "company": "조선일보"
+  },
+  {
+    "id": "2",
+    "image": "https://images.chosun.com/resizer/4MBDNkWR3ZhpRVBLOwOl_aZUODI=/108x108/smart/s3.amazonaws.com/arc-authors/chosun/6552def5-4447-4208-b09a-5cedf84df8e7.jpg",
+    "name": "김명일",
+    "field":"정치",
+    "company": "중앙일보"
+  },
+  {
+    "id": "3",
+    "image": "https://images.chosun.com/resizer/-SS3hEhq7NltSZeLpZcMenSvumI=/108x108/smart/s3.amazonaws.com/arc-authors/chosun/b4a8c143-51d3-4691-9c9d-a0a80072dd28.png",
+    "name": "오경묵",
+    "field":"사회",
+    "company": "한국경제"
+  },
+  {
+    "id": "4",
+    "image": "https://images.chosun.com/resizer/7K7h5P1JhUX-nvAJMxuB7ZDczYE=/108x108/smart/s3.amazonaws.com/arc-authors/chosun/70513bf4-acbf-4d1b-b3f4-9469f1b52d8c.png",
+    "name": "이가영",
+    "field":"사회",
+    "company": "매일경제"
+  },
+  {
+    "id": "5",
+    "image": "https://images.chosun.com/resizer/LR-CQ88V58ifOrk_nShsz8n4Hec=/108x108/smart/s3.amazonaws.com/arc-authors/chosun/dcba28f3-0584-49e2-b6fe-231caa6bea31.png",
+    "name": "이세영",
+    "field":"경제",
+    "company": "머니투데이"
+  },
+  {
+    "id": "6",
+    "image": "https://images.chosun.com/resizer/hEd-ILAwi8PhRrQhltCmyeDvwFY=/108x108/smart/s3.amazonaws.com/arc-authors/chosun/bac4d9b2-1a5c-4326-b112-d6be61bb66a9.png",
+    "name": "백수진",
+    "field":"국제",
+    "company": "동아일보"
+  }
+]

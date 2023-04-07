@@ -1,0 +1,179 @@
+@media all and (min-width: 1024px) {
+  .input-forms {
+
+    input{
+      width: 15vw;
+      margin-left: 10px;
+    }
+    .input-label{
+      font-size: 15px;
+      // margin-right: 10%;
+    }
+  }
+
+}
+@media all and (max-width: 1100px) {
+  .input-forms {
+
+    input{
+      width: 10vw;
+    }
+    .input-label{
+      font-size: 13px;
+      // margin-right: 8%;
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .input-forms {
+
+    input{
+      width: 5vw;
+    }
+    .input-label{
+      font-size: 13px;
+      margin-right: 10%;
+    }
+  }
+}
+
+
+
+.signup-wrapper {
+  font-family: 'Noto Sans KR', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container {
+    border-radius: 3%;
+    width: 100%;
+    background-image: url("../../../../public/img/paper-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .input-forms {
+    margin-block: 3%;
+    margin-left: 10%;
+    display: grid;
+    align-items: center;
+    border-radius: 15px;
+    width: 80%;
+    height: 80%;
+
+    .input-forms-item {      
+      margin-top: 3%;
+      padding: 5px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    .input-label {
+      margin-left: 10px;
+      // font-size: 15px;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .error-message {
+      font-size: 13px;
+      text-align: start;
+      margin-left: 10px;
+      color: red;
+      font-weight: bold;
+    }
+  }
+}
+
+.Typography-bold {
+  font-weight: bold;
+  font-size: 13px;
+  color: black;
+}
+
+
+.membership-check {
+  display: flex;
+  align-items: center;
+}
+
+.input-combo{
+  display: flex;
+  justify-content: start;
+  margin-top: 20px;
+}
+
+.input-datepicker{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  .input-label {
+    margin-right: 10px;
+  }
+}
+
+.submit-button{
+  margin-block: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.input-datepicker {
+  position: relative;
+  width: 20vw;
+}
+
+// .input-datepicker .react-datepicker-wrapper {
+//   width: 100%;
+// }
+
+.input-datepicker .react-datepicker__input-container input {
+  width: 100%;
+  height: 25px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.input-datepicker .react-datepicker__triangle {
+  display: none;
+}
+
+.input-datepicker .react-datepicker-popper {
+  z-index: 1;
+}
+
+.input-datepicker .react-datepicker {
+  border-radius: 10px;
+}
+
+.input-datepicker .react-datepicker__header {
+  background-color: #0072c6;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+}
+
+.input-datepicker .react-datepicker__day-name,
+.input-datepicker .react-datepicker__day {
+  color: #0072c6;
+}
+
+.input-datepicker .react-datepicker__day--selected {
+  background-color: #0072c6;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.input-datepicker .react-datepicker__day--keyboard-selected {
+  background-color: rgba(0, 114, 198, 0.5);
+  border-radius: 50%;
+  color: #fff;
+}
+
+.input-datepicker .react-datepicker__day--today {
+  font-weight: bold;
+}
+
+.input-datepicker .react-datepicker__time-container {
+  display: none !important;
+}

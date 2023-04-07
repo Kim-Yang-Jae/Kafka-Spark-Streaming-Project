@@ -1,0 +1,44 @@
+.region-news-card {
+  display: flex;
+  margin: 15px auto;
+  width: 90%;
+  height: 220px;
+}
+
+.region-news-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.region-news-card img {
+  width: 33.33%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px 0 0 4px;
+}
+
+.region-news-card .card-content {
+  width: 66.66%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 0 4px 4px 0;
+  background-color: #f5f5f5;
+}
+
+.region-news-card .card-content h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.region-news-card .card-content p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.region-news-card .card-content .date {
+  font-size: 14px;
+  font-weight: bold;
+}

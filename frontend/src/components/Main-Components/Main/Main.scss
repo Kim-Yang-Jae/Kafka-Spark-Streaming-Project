@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+@keyframes smoothAppear {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  animation: smoothAppear 2s forwards;
+  animation-delay: 0.2s;
+
+  .main-top-hr {
+    margin: 0;
+    padding: 0;
+    width: 0.5;
+    height: 100px;
+    background-color: white;
+    position: absolute;
+  }
+
+  .main-top-h3 {
+    color: white;
+  }
+
+  .main-top-h2 {
+    color: white;
+  }
+}
+
+.main-mid {
+  text-align: left;
+  opacity: 0;
+  animation: smoothAppear 2s forwards;
+  animation-delay: -0.2s;
+}
+
+.main-mid-wrapper {
+  width: 100%;
+  display: flex;
+  opacity: 0;
+  animation: smoothAppear 2s forwards;
+  animation-delay: -0.2s;
+
+  .main-mid-left {
+    margin: 2%;
+    width: 48%;
+    border: 1px solid #d8d8d8;
+  }
+
+  .main-mid-right {
+    margin: 2%;
+    width: 48%;
+    border: 1px solid #d8d8d8;
+  }
+}
+
+.main-bot-h2 {
+  text-align: left;
+}
+
+.main-bot-wrapper {
+  display: flex;
+  opacity: 0;
+  animation: smoothAppear 2s forwards;
+  animation-delay: 0.2s;
+
+  .main-bot-left {
+    width: 65%;
+    justify-content: center;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .main-bot-left::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-bot-right {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .main-bot-right-wrapper {
+      width: 100%;
+      justify-content: center;
+
+      .main-bot-right-h2 {
+        margin-bottom: 0;
+      }
+
+      .main-bot-right-1 {
+        margin: 0 4% 0 4%;
+        width: 110%;
+        border: 1px solid #d8d8d8;
+      }
+
+      .main-bot-right-2 {
+        margin: 0 4% 0 4%;
+        width: 110%;
+        border: 1px solid #d8d8d8;
+      }
+    }
+  }
+}

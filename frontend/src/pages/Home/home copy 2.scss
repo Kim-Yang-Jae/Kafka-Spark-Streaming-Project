@@ -1,0 +1,170 @@
+.html {
+  height: 100%;
+}
+ 
+.body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  height: 5000px; //스크롤 가능케 처리
+  -webkit-overflow-scrolling: touch;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.world {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  perspective: 1000px;
+  background: linear-gradient(to bottom, #9dd5ff, #c9e6ff, #f5faff);
+}
+
+.stage {
+  position: absolute;
+  
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transform-style: preserve-3d; //IE 지원하지 않음
+}
+
+.progress {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 5px;
+  background: #555;
+ 
+  &__bar {
+    width: 0%;
+    height: 100%;
+    background: #00afff;
+  }
+}
+
+.house {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  transform-style: preserve-3d;
+  transform: translateZ(-500vw);
+  display: grid;
+  justify-content: start;
+  
+  &__wall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 1);
+
+    &--left {
+      width: 1000vw;
+      transform: rotateY(90deg) translateZ(-500vw);
+      background: linear-gradient(to left, #9dd5ff, #c9e6ff, #f5faff, #ffffff);
+      h1{
+        font-size: 3rem;
+        margin-left: 40px;
+        color: #0066cc;
+      }
+    }
+
+    &--right {
+      width: 1000vw;
+      transform: rotateY(90deg) translateZ(-400vw);
+      background: linear-gradient(to left, #9dd5ff, #c9e6ff, #f5faff, #ffffff);
+    }
+  
+    &--front {
+      // 앞장은 500vw로 고정되는 모양(기호에 따라 450vw로 바꿔서 쓰자)
+      &-a {
+        transform: translateZ(500vw);
+      }
+     
+      &-b {
+        transform: translateZ(300vw);
+      }
+     
+      &-c {
+        transform: translateZ(150vw);
+      }
+     
+      &-d {
+        transform: translateZ(-50vw);
+      }
+     
+      &-e {
+        transform: translateZ(-250vw);
+      }
+
+      &-f {
+        transform: translateZ(-450vw);
+      }
+    }
+    
+  }
+
+  .house__wall--left h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    margin: 0;
+    padding: 0;
+    transform: rotate(-45deg);
+    transform-origin: top left;
+    z-index: 10;
+    color: #0066cc;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .house__wall--left h1.made-by-tlens {
+    left: 0;
+    top: 0;
+    transform: none;
+    margin-left: 150vw;
+  }
+
+  .house__wall--right{
+    img{
+      width: auto;
+      height: 100%;
+      margin-right: 680vw;
+    }
+  }
+  
+  
+  &__contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #333;
+    font-size: 5em;
+    .description{
+      font-size: 4vh;
+      font-weight: bold;
+      
+    }
+  }
+
+}
+
+.house__contents-title{
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0px 15px 10px rgba(0, 0, 0, 0.8));
+
+}
+
